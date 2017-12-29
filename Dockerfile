@@ -10,7 +10,6 @@ MAINTAINER <yanai@example.com>
 LABEL name="yanai-app" \
       vendor="Yanai Testing" \
       version="1.0" \
-      build-date="2017-12-21T15:47:06.130692" \
       release="1" \
       run='docker run -d -p 8080:80 --name=yanai-app yanai-app' \
       summary="Yanai Corp's Starter app" \
