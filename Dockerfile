@@ -7,13 +7,24 @@ FROM registry.access.redhat.com/rhel7/rhel
 MAINTAINER <yanai@example.com>
 
 ### Add Atomic/OpenShift Labels - https://github.com/projectatomic/ContainerApplicationGenericLabels#####
-LABEL name="yanai-app" \
-      vendor="Yanai Testing" \
-      version="1.0" \
-      release="1" \
-      run='docker run -d -p 8080:80 --name=yanai-app yanai-app' \
-      summary="Yanai Corp's Starter app" \
-      description="Starter app will do ....." 
+#Labels
+LABEL  name="AvocadoSystems/avocado-demo" \
+       vendor="Avocado Systems" \
+       version="1.2" \
+       release="1" \
+       com.redhat.component="rhel-server-docker" \
+       authoritative-source-url="registry.access.redhat.com" \
+       distribution-scope="public" \
+       description="Demo container will embed the ASP plugins integration ..." \
+       io.k8s.display-name="Red Hat Enterprise Linux 7" \
+       summary="Avocado Systems Application-Security-Platform for Applications" \
+       vcs-type="git" \
+       vcs-ref="b7f83830183f71d08b6d758479417bb5437877a9" \
+       architecture="x86_64" \
+       io.openshift.tags="base rhel7" \
+       # build-date="2017-12-21T15:47:06.130692" \
+       com.redhat.build-host="gj-rhel74.localdomain" 
+
 
 ### Atomic Help File - Write in Markdown, it will be converted to man format at build time.
 ### https://github.com/projectatomic/container-best-practices/blob/master/creating/help.adoc
