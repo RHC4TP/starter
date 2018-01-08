@@ -6,24 +6,24 @@ FROM registry.access.redhat.com/rhel7/rhel
 
 MAINTAINER <yanai@example.com>
 
-### Add Atomic/OpenShift Labels - https://github.com/projectatomic/ContainerApplicationGenericLabels#####
-#Labels
-LABEL  name="AvocadoSystems/avocado-demo" \
-       vendor=Sonatype \
-       version="1.2" \
-       release="1" \
-       com.redhat.component="rhel-server-docker" \
-       authoritative-source-url="registry.access.redhat.com" \
-       distribution-scope="public" \
-       description="Demo container will embed the ASP plugins integration ..." \
-       io.k8s.display-name="Red Hat Enterprise Linux 7" \
-       summary="Avocado Systems Application-Security-Platform for Applications" \
-       vcs-type="git" \
-       vcs-ref="b7f83830183f71d08b6d758479417bb5437877a9" \
-       architecture="x86_64" \
-       io.openshift.tags="base rhel7" \
-       # build-date="2017-12-21T15:47:06.130692" \
-       com.redhat.build-host="gj-rhel74.localdomain" 
+LABEL name="Nexus Repository Manager" \
+      vendor=Sonatype \
+      version="3.7.1-02" \
+      release="3.7.1" \
+      url="https://sonatype.com" \
+      summary="The Nexus Repository Manager server \
+          with universal support for popular component formats." \
+      run="docker run -d --name NAME \
+          -p 8081:8081 \
+          IMAGE" \
+      stop="docker stop NAME" \
+      com.sonatype.license="Apache License, Version 2.0" \
+      com.sonatype.name="Nexus Repository Manager base image" \
+      io.k8s.description="The Nexus Repository Manager server \
+          with universal support for popular component formats." \
+      io.k8s.display-name="Nexus Repository Manager" \
+      io.openshift.expose-services="8081:8081" \
+      io.openshift.tags="Sonatype,Nexus,Repository Manager"
 
 
 ### Atomic Help File - Write in Markdown, it will be converted to man format at build time.
