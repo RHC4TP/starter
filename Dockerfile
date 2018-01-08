@@ -17,8 +17,8 @@ LABEL name="Nexus Repository Manager" \
           -p 8081:8081 \
           IMAGE" \
       stop="docker stop NAME" \
-      com.sonatype.license="Apache License, Version 2.0" \
-      com.sonatype.name="Nexus Repository Manager base image" \
+      #com.sonatype.license="Apache License, Version 2.0" \
+      #com.sonatype.name="Nexus Repository Manager base image" \
       io.k8s.description="The Nexus Repository Manager server \
           with universal support for popular component formats." \
       io.k8s.display-name="Nexus Repository Manager" \
