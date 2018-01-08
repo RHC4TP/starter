@@ -9,7 +9,7 @@ MAINTAINER <yanai@example.com>
 ### Add Atomic/OpenShift Labels - https://github.com/projectatomic/ContainerApplicationGenericLabels#####
 #Labels
 LABEL  name="AvocadoSystems/avocado-demo" \
-       vendor="Avocado Systems" \
+       vendor=Sonatype \
        version="1.2" \
        release="1" \
        com.redhat.component="rhel-server-docker" \
