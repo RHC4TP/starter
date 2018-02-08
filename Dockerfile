@@ -6,25 +6,14 @@ FROM registry.access.redhat.com/rhel7/rhel
 
 MAINTAINER <yanai@example.com>
 
-LABEL name="Nexus Repository Manager" \
-      vendor=Sonatype \
-      version="3.7.1-02" \
-      release="3.7.1" \
-      url="https://sonatype.com" \
-      summary="The Nexus Repository Manager server \
-          with universal support for popular component formats." \
-      run="docker run -d --name NAME \
-          -p 8081:8081 \
-          IMAGE" \
-      stop="docker stop NAME" \
-      #com.sonatype.license="Apache License, Version 2.0" \
-      #com.sonatype.name="Nexus Repository Manager base image" \
-      io.k8s.description="The Nexus Repository Manager server \
-          with universal support for popular component formats." \
-      io.k8s.display-name="Nexus Repository Manager" \
-      io.openshift.expose-services="8081:8081" \
-      io.openshift.tags="Sonatype,Nexus,Repository Manager"
-
+### Add Atomic/OpenShift Labels - https://github.com/projectatomic/ContainerApplicationGenericLabels#####
+LABEL name="yanai-app" \
+      vendor="Yanai Testing" \
+      version="1.0" \
+      release="1" \
+      run='docker run -d -p 8080:80 --name=yanai-app yanai-app' \
+      summary="Yanai Corp's Starter app" \
+      description="Starter app will do ....." 
 
 ### Atomic Help File - Write in Markdown, it will be converted to man format at build time.
 ### https://github.com/projectatomic/container-best-practices/blob/master/creating/help.adoc
