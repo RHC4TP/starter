@@ -18,7 +18,7 @@ LABEL name="yanai-app" \
 ### Atomic Help File - Write in Markdown, it will be converted to man format at build time.
 ### https://github.com/projectatomic/container-best-practices/blob/master/creating/help.adoc
 
-#COPY help.md /tmp/help.md
+COPY help.md /tmp/help.md
 COPY licenses /licenses
 
 
@@ -31,7 +31,7 @@ RUN REPOLIST=rhel-7-server-rpms,rhel-7-server-optional-rpms \
     yum -y install --disablerepo "*" --enablerepo ${REPOLIST} --setopt=tsflags=nodocs ${INSTALL_PKGS} && \
 
 ### help file markdown to man conversion
-#   go-md2man -in /tmp/help.md -out /help.1 && \
+   go-md2man -in /tmp/help.md -out /help.1 && \
 
      yum clean all
 
