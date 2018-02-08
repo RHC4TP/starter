@@ -31,7 +31,7 @@ RUN REPOLIST=rhel-7-server-rpms,rhel-7-server-optional-rpms \
     yum -y install --disablerepo "*" --enablerepo ${REPOLIST} --setopt=tsflags=nodocs ${INSTALL_PKGS} && \
 
 ### help file markdown to man conversion
-   go-md2man -in /tmp/help.md -out /help.1 && \
+#   go-md2man -in /tmp/help.md -out /help.1 && \
 
      yum clean all
 
