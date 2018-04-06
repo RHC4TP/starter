@@ -30,4 +30,5 @@ RUN REPOLIST=rhel-7-server-rpms,rhel-7-server-optional-rpms \
       --security --sec-severity=Important --sec-severity=Critical && \
     yum -y install --disablerepo "*" --enablerepo ${REPOLIST} --setopt=tsflags=nodocs ${INSTALL_PKGS} && \
 
+### Install your application here -- add all other necessary items to build your image
 
