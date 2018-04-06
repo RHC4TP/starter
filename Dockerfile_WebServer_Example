@@ -30,9 +30,6 @@ RUN REPOLIST=rhel-7-server-rpms,rhel-7-server-optional-rpms \
 
 
 # Install the application
-
-RUN yum install httpd -y
-
 RUN echo "This container image was build on:" > /var/www/html/index.html
 RUN date >> /var/www/html/index.html
 EXPOSE 8080
