@@ -28,3 +28,6 @@ RUN INSTALL_PKGS="httpd" && \
       install --nodocs ${INSTALL_PKGS} && \
     microdnf remove ${INSTALL_PKGS} && \
     microdnf clean all
+    
+####### Add app-specific needs below. #######
+    
