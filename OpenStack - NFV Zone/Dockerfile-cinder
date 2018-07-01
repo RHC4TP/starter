@@ -2,7 +2,7 @@ FROM registry.access.redhat.com/rhosp13/openstack-cinder-volume
 MAINTAINER VenderX Systems Engineering <maintainer@vendorX.com>
 
 ###Required Labels
-LABEL name="rhosp13/openstack-cinder-volume-vendorx-pluginy" \
+LABEL name="rhosp13/openstack-cinder-volume-vendorx-plugin" \
       maintainer="maintainer@vendorX.com" \ 
       vendor="VendorX" \
       version="3.7" \
