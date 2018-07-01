@@ -1,0 +1,36 @@
+FROM registry.access.redhat.com/rhosp13/openstack-neutron-server
+MAINTAINER VenderX Systems Engineering <maintainer@vendorX.com>
+
+###Required Labels
+LABEL name="rhosp13/openstack-neutron-server-vendorx-plugin" \
+      maintainer="maintainer@vendorX.com" \ 
+      vendor="VendorX" \
+      version="3.7" \
+      release="1" \
+      summary="Red Hat OpenStack Platform 13.0 neutron-server VendorX PluginY" \
+      description="Red Hat OpenStack Platform 13.0 neutron-server VendorX PluginY"
+      
+     
+USER root
+
+###Adding package
+###repo exmple
+COPY vendorX.repo /etc/yum.repos.d/vendorX.repo
+
+###adding package with curl 
+RUN curl -L -o /verdorX-plugin.rpm http://vendorX.com/vendorX-plugin.rpm 
+
+###adding local package
+COPY verdorX-plugin.rpm /
+
+# Enable a repo to install a package
+RUN yum clean all
+RUN yum-config-manager --enable rhel-7-server-openstack-13-rpms
+RUN yum install -y vendorX-plugin
+RUN yum-config-manager --disable rhel-7-server-openstack-13-rpms
+
+# Add required license as text file in Liceses directory (GPL, MIT, APACHE, Partner End User Agreement, etc)
+RUN mkdir /licenses
+COPY licensing.txt /licenses
+
+USER neutron
