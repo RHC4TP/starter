@@ -1,1 +1,25 @@
+FROM registry.access.redhat.com/rhel-atomic
+MAINTAINER connect-tech@redhat.com
+
+### Atomic/OpenShift Labels - https://github.com/projectatomic/ContainerApplicationGenericLabels
+LABEL name="WebServer-Atomic" \
+      maintainer="connect-tech@redhat.com" \
+      vendor="RHC" \
+      version="1.2-1" \
+      release="1" \
+      summary="WebServer Example" \
+      description="Starter app will build a webserver" \
+
+### add licenses to this directory
+COPY licenses /licenses
+
+### Add your package needs here
+RUN INSTALL_PKGS="httpd" && \
+
+### Add necessary Red Hat repos here
+    microdnf --enablerepo=rhel-7-server-rpms --enablerepo=rhel-7-server-optional-rpms \
+      install --nodocs ${INSTALL_PKGS} && \
+    microdnf remove ${INSTALL_PKGS} && \
+    microdnf clean all
+   
 
