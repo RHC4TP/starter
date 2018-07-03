@@ -1,3 +1,6 @@
+## Simple webserver container 
+# Using RHEL atomic base image and Apache Web server
+
 FROM registry.access.redhat.com/rhel-atomic
 MAINTAINER connect-tech@redhat.com
 
