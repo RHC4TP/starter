@@ -1,6 +1,6 @@
 # Dockerfile Templates
 
-Here you will find Templates and Examples of Dockerfiles. 
+Here you will find Templates and Examples of Dockerfiles. Note that you will need the 'licenses' Directory for your image to pass certification. 
 
 # Templates
 
