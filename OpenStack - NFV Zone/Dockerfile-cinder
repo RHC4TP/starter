@@ -1,4 +1,6 @@
-FROM registry.access.redhat.com/rhosp13/openstack-cinder-volume
+## Note: Pulling container will require logging into Red Hat's registry using `docker login registry.redhat.io` .
+
+FROM registry.redhat.io/rhosp13/openstack-cinder-volume
 MAINTAINER VenderX Systems Engineering <maintainer@vendorX.com>
 
 ###Required Labels

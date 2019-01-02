@@ -1,7 +1,9 @@
 ## Simple webserver container 
-# Using RHEL atomic base image and Apache Web server
+## Note: Pulling container will require logging into Red Hat's registry using `docker login registry.redhat.io` .
 
-FROM registry.access.redhat.com/rhel-atomic
+# Using RHEL atomic base image and Apache Web server
+FROM registry.redhat.io/rhel-atomic
+
 MAINTAINER connect-tech@redhat.com
 
 ### Atomic/OpenShift Labels - https://github.com/projectatomic/ContainerApplicationGenericLabels

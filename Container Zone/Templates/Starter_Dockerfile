@@ -1,4 +1,6 @@
-FROM registry.access.redhat.com/rhel7
+## Note: Pulling container will require logging into Red Hat's registry using `docker login registry.redhat.io` .
+
+FROM registry.redhat.io/rhel7
 MAINTAINER NAME <EMAIL@ADDRESS>
 
 ### Required Atomic/OpenShift Labels - https://github.com/projectatomic/ContainerApplicationGenericLabels
