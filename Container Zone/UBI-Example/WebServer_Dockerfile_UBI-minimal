@@ -1,0 +1,30 @@
+## Simple webserver container 
+## Note: Pulling container will require logging into Red Hat's registry using `docker login registry.redhat.io` .
+
+# Using UBI minimal base image and Apache Web server
+FROM registry.redhat.io/ubi7-minimal
+
+MAINTAINER connect-tech@redhat.com
+
+### Atomic/OpenShift Labels - https://github.com/projectatomic/ContainerApplicationGenericLabels
+LABEL name="WebServer-Atomic" \
+      maintainer="connect-tech@redhat.com" \
+      vendor="RHC" \
+      version="1.2-1" \
+      release="1" \
+      summary="WebServer Example" \
+      description="Starter app will build a webserver" \
+
+### add licenses to this directory
+COPY licenses /licenses
+
+### Add your package needs here
+RUN INSTALL_PKGS="httpd" && \
+
+### Add necessary Red Hat repos here
+    microdnf --enablerepo=ubi-7-server --enablerepo=ubi-7-optional \
+      install --nodocs ${INSTALL_PKGS} && \
+    microdnf remove ${INSTALL_PKGS} && \
+    microdnf clean all
+   
+
