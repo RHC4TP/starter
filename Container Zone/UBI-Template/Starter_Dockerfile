@@ -1,5 +1,6 @@
 ## Note: Pulling container will require logging into Red Hat's registry using `docker login registry.redhat.io` .
 
+## Note: We're using the UBI 7 registry instead of RHEL here
 FROM registry.redhat.io/ubi7
 MAINTAINER NAME <EMAIL@ADDRESS>
 
@@ -16,6 +17,7 @@ LABEL name="APPLICATION NAME" \
 COPY licenses /licenses
 
 ### Add necessary Red Hat repos here
+## Note: The UBI has different repos than the RHEL repos.
 RUN REPOLIST=ubi-7,ubi-7-optional \
 
 ### Add your package needs here
