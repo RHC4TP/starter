@@ -5,7 +5,7 @@
 
 # Pull the rhel image from the local repository
 #FROM registry.redhat.io/rhel7/rhel
-FROM registry.redhat.io/ubi7/ubi-7
+FROM registry.redhat.io/ubi7/ubi
 #USER root 
 MAINTAINER connect-tech@redhat.com
 
