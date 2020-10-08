@@ -7,7 +7,6 @@
 #FROM registry.redhat.io/rhel7/rhel
 FROM registry.redhat.io/ubi7/ubi
 #USER root 
-MAINTAINER connect-tech@redhat.com
 
 ### Required Atomic/OpenShift Labels - https://github.com/projectatomic/ContainerApplicationGenericLabels#####
 LABEL name="Web-app" \
